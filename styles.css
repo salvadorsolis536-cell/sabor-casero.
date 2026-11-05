@@ -1,0 +1,504 @@
+
+/* ESTILOS GENERALES */
+
+:root {
+    --vino: #70251f;
+    --vino-oscuro: #431612;
+    --crema: #fff8e9;
+    --amarillo: #f4b544;
+    --verde: #286341;
+    --texto: #352622;
+    --blanco: #ffffff;
+    --sombra: 0 10px 28px rgba(67, 22, 18, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    background: var(--crema);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 7%;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--vino);
+    font-size: 1.55rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.marca-icono {
+    font-size: 1.8rem;
+}
+
+/* NAVEGACIÓN */
+
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.navegacion a {
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a:focus {
+    color: var(--vino);
+}
+
+/* PORTADA */
+
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    padding: 75px 8%;
+    background: #f7e8ca;
+}
+
+.portada-contenido {
+    max-width: 590px;
+}
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    color: var(--vino-oscuro);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: var(--vino);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 15px;
+}
+
+.portada-contenido > p:not(.etiqueta) {
+    max-width: 520px;
+    margin-bottom: 25px;
+    font-size: 1.08rem;
+}
+
+.portada-imagen {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 800;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton-primario {
+    color: var(--blanco);
+    background: var(--vino);
+}
+
+.boton-primario:hover {
+    background: var(--vino-oscuro);
+}
+
+.boton-claro {
+    color: var(--vino-oscuro);
+    background: var(--crema);
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 75px 8%;
+}
+
+/* NOSOTROS */
+
+.nosotros {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.nosotros p {
+    max-width: 720px;
+}
+
+.dato-destacado {
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.dato-destacado span {
+    font-size: 2rem;
+}
+
+.dato-destacado h3 {
+    color: var(--vino);
+    margin: 10px 0;
+}
+
+/* MENÚ */
+
+.menu {
+    background: #fffdf7;
+}
+
+.encabezado-seccion {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+/* CARRUSEL */
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carrusel-ventana {
+    min-width: 0;
+    overflow: hidden;
+    flex: 1;
+}
+
+.carrusel-pista {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 8px 2px 18px;
+}
+
+.carrusel-pista::-webkit-scrollbar {
+    display: none;
+}
+
+.tarjeta-platillo {
+    flex: 0 0 calc((100% - 36px) / 3);
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    scroll-snap-align: start;
+}
+
+.tarjeta-platillo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.tarjeta-contenido {
+    padding: 20px;
+}
+
+.tarjeta-contenido h3 {
+    color: var(--vino);
+    margin-bottom: 8px;
+}
+
+/* BOTONES DEL CARRUSEL */
+
+.control-carrusel {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    color: var(--blanco);
+    background: var(--vino);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nota {
+    margin-top: 14px;
+    color: #71645e;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* SERVICIOS */
+
+.servicios {
+    background: #f7e8ca;
+}
+
+.rejilla-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.servicio {
+    padding: 28px;
+    border-radius: 18px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.servicio span {
+    font-size: 2.2rem;
+}
+
+.servicio h3 {
+    color: var(--vino);
+    margin: 12px 0;
+}
+
+/* PUBLICIDAD */
+
+.llamada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 55px 8%;
+    color: var(--blanco);
+    background: var(--vino);
+}
+
+.llamada h2,
+.llamada .etiqueta {
+    color: var(--blanco);
+}
+
+.llamada p:not(.etiqueta) {
+    color: #f8e9d5;
+}
+
+/* CONTACTO */
+
+.contacto-datos {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 18px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.contacto-datos p {
+    margin-bottom: 12px;
+}
+
+.contacto-datos .boton {
+    margin-top: 12px;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    padding: 35px 8%;
+    color: var(--blanco);
+    background: var(--vino-oscuro);
+    text-align: center;
+}
+
+.marca-pie {
+    color: var(--blanco);
+    justify-content: center;
+}
+
+.pie-pagina p {
+    margin-top: 6px;
+}
+
+/* CELULAR: ORIENTACIÓN VERTICAL */
+
+@media (max-width: 768px) and (orientation: portrait) {
+
+    .encabezado {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 5%;
+    }
+
+    .navegacion {
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    .navegacion a {
+        font-size: 0.9rem;
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+        gap: 25px;
+    }
+
+    .portada-imagen {
+        height: 270px;
+    }
+
+    .seccion {
+        padding: 48px 6%;
+    }
+
+    .nosotros {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .tarjeta-platillo {
+        flex-basis: 82%;
+    }
+
+    .tarjeta-platillo img {
+        height: 190px;
+    }
+
+    .rejilla-servicios {
+        grid-template-columns: 1fr;
+    }
+
+    .llamada {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 42px 6%;
+    }
+}
+
+/* CELULAR Y TABLET: ORIENTACIÓN HORIZONTAL */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .encabezado {
+        padding: 10px 4%;
+    }
+
+    .navegacion {
+        gap: 14px;
+    }
+
+    .portada {
+        padding: 30px 5%;
+        gap: 22px;
+    }
+
+    .portada-imagen {
+        height: 260px;
+    }
+
+    .seccion {
+        padding: 42px 5%;
+    }
+
+    .tarjeta-platillo {
+        flex-basis: 45%;
+    }
+
+    .tarjeta-platillo img {
+        height: 160px;
+    }
+
+    .rejilla-servicios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .llamada {
+        padding: 35px 5%;
+    }
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+
+@media (max-width: 420px) {
+
+    .marca {
+        font-size: 1.35rem;
+    }
+
+    .navegacion {
+        gap: 8px 12px;
+    }
+
+    .navegacion a {
+        font-size: 0.82rem;
+    }
+
+    .portada-imagen {
+        height: 220px;
+    }
+
+    .control-carrusel {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+    }
+}
